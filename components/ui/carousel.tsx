@@ -111,8 +111,8 @@ export const PlansCarousel = ({ plans }: CarouselProps) => {
                   className="w-full max-w-sm flex-shrink-0"
                 >
                   <div className={`
-                    transform transition-all duration-300
-                    ${i === 1 ? 'scale-105 z-10' : 'scale-95 opacity-80'}
+                    transform transition-all duration-300 hover:scale-105
+                    ${i === 1 ? 'scale-110 z-10 shadow-xl' : 'scale-95 opacity-80 hover:opacity-100'}
                   `}>
                     <PlanCard {...plans[index]} />
                   </div>
@@ -147,15 +147,47 @@ export const PlansCarousel = ({ plans }: CarouselProps) => {
         ))}
       </div>
     </motion.div>
-  );
-};
+    )}
 
-export const PlanCard = ({ name, speed, price, popular, features }: any) => (
-  <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+export const PlanCard = ({ name, speed, price, popular, features }: any) => {
+  const [isHovered, setIsHovered] = useState(false);
+  
+  return (
+  <motion.div 
+    className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform-gpu"
+    whileHover={{ 
+      y: -5,
+      rotateX: 5,
+      rotateY: 5,
+      scale: 1.05
+    }}
+    onHoverStart={() => setIsHovered(true)}
+    onHoverEnd={() => setIsHovered(false)}
+    style={{
+      perspective: "1000px"
+    }}>
     <div className="p-6">
-      <h3 className="text-2xl font-bold text-gray-900">{name}</h3>
-      <p className="mt-2 text-sm text-gray-500">{speed}</p>
-      <p className="text-4xl font-bold text-blue-600 mt-4">{price}</p>
+      <motion.h3 
+        className="text-2xl font-bold text-gray-900"
+        animate={{ scale: isHovered ? 1.05 : 1 }}
+        transition={{ duration: 0.2 }}
+      >
+        {name}
+      </motion.h3>
+      <motion.p 
+        className="mt-2 text-sm text-gray-500"
+        animate={{ y: isHovered ? -2 : 0 }}
+        transition={{ duration: 0.2 }}
+      >
+        {speed}
+      </motion.p>
+      <motion.p 
+        className="text-4xl font-bold text-blue-600 mt-4"
+        animate={{ scale: isHovered ? 1.1 : 1 }}
+        transition={{ duration: 0.2 }}
+      >
+        {price}
+      </motion.p>
       {popular && (
         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 mt-4">
           Popular
@@ -174,5 +206,5 @@ export const PlanCard = ({ name, speed, price, popular, features }: any) => (
         ))}
       </ul>
     </div>
-  </div>
-);
+  </motion.div>
+  )};

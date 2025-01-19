@@ -1,7 +1,6 @@
 'use client'
 
-import { useState } from 'react'
-import { MotionValue, motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 
 export const CardHoverEffect = ({ children }: { children: React.ReactNode }) => {
   const x = useMotionValue(0)

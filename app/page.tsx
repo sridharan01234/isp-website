@@ -1,7 +1,8 @@
 'use client'
 import { motion } from 'framer-motion';
 import Head from 'next/head';
-import {PlansCarousel} from '@/components/ui/carousel';
+import { ScrollToTop } from '@/components/ui/scroll-to-top';
+import { PlansCarousel } from '@/components/ui/carousel';
 
 export default function Home() {
   const plans = [
@@ -16,7 +17,7 @@ export default function Home() {
       ]
     },
     {
-      name: "FTTH Voice Unlimited", 
+      name: "FTTH Voice Unlimited",
       speed: "Up to 25 Mbps till 20 GB, Up to 2 Mbps beyond 20 GB",
       price: "₹299/mo",
       features: [
@@ -27,7 +28,7 @@ export default function Home() {
     },
     {
       name: "Fibre Rural Home WiFi",
-      speed: "Up to 30 Mbps till 1400 GB, 4 Mbps beyond 1400 GB", 
+      speed: "Up to 30 Mbps till 1400 GB, 4 Mbps beyond 1400 GB",
       price: "₹399/mo",
       features: [
         { feature: "Unlimited Data Download", included: true },
@@ -58,7 +59,7 @@ export default function Home() {
     {
       name: "Fibre Basic",
       speed: "Up to 60 Mbps till 3300 GB, 4 Mbps beyond 3300 GB",
-      price: "₹499/mo", 
+      price: "₹499/mo",
       features: [
         { feature: "Unlimited Data Download", included: true },
         { feature: "Unlimited calls to any network", included: true },
@@ -70,7 +71,7 @@ export default function Home() {
   const ruralPlans = [
     {
       name: "Rural FTTH Voice Unlimited",
-      speed: "Up to 25 Mbps till 50 GB, Up to 2 Mbps beyond 50GB", 
+      speed: "Up to 25 Mbps till 50 GB, Up to 2 Mbps beyond 50GB",
       price: "₹999/6mo",
       features: [
         { feature: "Unlimited Data Download", included: true },
@@ -80,8 +81,8 @@ export default function Home() {
     },
     {
       name: "FTTH Rural Voice Unlimited",
-      speed: "Up to 25 Mbps till 1300 GB, Up to 2 Mbps beyond 1300GB", 
-      price: "₹999/3mo", 
+      speed: "Up to 25 Mbps till 1300 GB, Up to 2 Mbps beyond 1300GB",
+      price: "₹999/3mo",
       features: [
         { feature: "Unlimited Data Download", included: true },
         { feature: "Unlimited calls to any network", included: true },
@@ -90,7 +91,7 @@ export default function Home() {
     },
     {
       name: "Fibre Rural Home WiFi",
-      speed: "Up to 25 Mbps till 1400 GB, Up to 2 Mbps beyond 1400GB", 
+      speed: "Up to 25 Mbps till 1400 GB, Up to 2 Mbps beyond 1400GB",
       price: "₹1999/6mo",
       features: [
         { feature: "Unlimited Data Download", included: true },
@@ -100,8 +101,10 @@ export default function Home() {
     }
   ];
 
+
   return (
     <>
+      <ScrollToTop />
       <Head>
         <title>YourISP - High Speed Internet Provider</title>
         <meta name="description" content="Fast and reliable internet services" />
@@ -109,42 +112,43 @@ export default function Home() {
 
       <main className="min-h-screen bg-gray-50">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+        <section className="bg-gradient-to-r from-blue-600 to-blue-400 text-white">
           <div className="container mx-auto px-4 py-20">
             <div className="max-w-3xl mx-auto text-center">
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="text-5xl font-bold mb-6"
+                className="text-5xl text-white font-bold mb-6"
               >
                 Lightning Fast Internet
               </motion.h1>
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-xl mb-8"
+                className="text-xl text-white mb-8"
               >
                 Experience unlimited possibilities with our high-speed fiber internet
               </motion.p>
-              <motion.button 
+              <motion.button
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold"
+                className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors"
               >
-                Check Availability
+                <a href="/quote">Check Availability</a>
               </motion.button>
             </div>
           </div>
         </section>
 
+
         {/* Plans Section */}
         <section className="container mx-auto px-4 py-20">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -152,7 +156,7 @@ export default function Home() {
           >
             Choose Your Plan
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -186,7 +190,7 @@ export default function Home() {
         {/* Features Section */}
         <section className="bg-white py-20">
           <div className="container mx-auto px-4">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -220,7 +224,7 @@ export default function Home() {
                   whileHover={{ scale: 1.05 }}
                   className="text-center p-6 rounded-xl bg-white shadow-lg hover:shadow-xl transition-shadow"
                 >
-                  <motion.div 
+                  <motion.div
                     className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.7 }}
@@ -229,7 +233,7 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={feature.icon} />
                     </svg>
                   </motion.div>
-                  <motion.h3 
+                  <motion.h3
                     className="text-xl font-bold mb-2"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -237,7 +241,7 @@ export default function Home() {
                   >
                     {feature.title}
                   </motion.h3>
-                  <motion.p 
+                  <motion.p
                     className="text-gray-600"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
