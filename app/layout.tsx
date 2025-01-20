@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "YourISP - High Speed Internet Provider",
+  title: "ThillaiCable - High Speed Internet Provider",
   description: "Experience lightning-fast fiber internet with unlimited possibilities. Choose from our range of plans and get connected today.",
   keywords: "ISP, internet service provider, fiber internet, high speed internet, broadband",
 };

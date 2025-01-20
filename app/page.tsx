@@ -106,7 +106,7 @@ export default function Home() {
     <>
       <ScrollToTop />
       <Head>
-        <title>YourISP - High Speed Internet Provider</title>
+        <title>ThillaiCable - High Speed Internet Provider</title>
         <meta name="description" content="Fast and reliable internet services" />
       </Head>
 

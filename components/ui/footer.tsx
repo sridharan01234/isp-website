@@ -26,7 +26,7 @@ export const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-bold mb-4">YourISP</h3>
+            <h3 className="text-2xl font-bold mb-4">ThillaiCable</h3>
             <p className="text-gray-400">
               Providing high-speed internet solutions for homes and businesses.
               Stay connected with the fastest and most reliable internet service.
@@ -118,7 +118,7 @@ export const Footer = () => {
           className="mt-8 pt-8 border-t border-gray-800 text-center"
         >
           <p className="text-gray-400">
-            © {new Date().getFullYear()} YourISP. All rights reserved.
+            © {new Date().getFullYear()} ThillaiCable. All rights reserved.
           </p>
         </motion.div>
       </div>

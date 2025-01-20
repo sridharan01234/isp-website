@@ -35,7 +35,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center"
           >
-            <Link href="/" className="text-2xl font-bold text-blue-600">YourISP</Link>
+            <Link href="/" className="text-2xl font-bold text-blue-600">ThillaiCable</Link>
           </motion.div>
           <div className="ml-4">
           </div>
