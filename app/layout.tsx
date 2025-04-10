@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import  Navbar  from '@/components/ui/navbar';
+import Navbar from '@/components/ui/navbar';
 import { FloatingActionButton } from '@/components/ui/floating-action-button';
-import {Footer} from '@/components/ui/footer'
-import { ThemeProvider } from '@/components/theme-provider';
+import { Footer } from '@/components/ui/footer'
 import { PageTransition } from '@/components/transition';
 
 const geistSans = Geist({
@@ -31,16 +30,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-gray-900 transition-colors duration-200`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white transition-colors duration-200`}
       >
-        <ThemeProvider>
-          <Navbar />
-          <FloatingActionButton />
-          <PageTransition>
-            {children}
-          </PageTransition>
-          <Footer />
-        </ThemeProvider>
+        <Navbar />
+        <FloatingActionButton />
+        <PageTransition>
+          {children}
+        </PageTransition>
+        <Footer />
       </body>
     </html>
   );
